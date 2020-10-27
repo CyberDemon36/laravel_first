@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('user/{id}', function($userId) {
+   echo $userId;
+});
+Route::get('find/{fid?}', function($findId = null){
+    echo 'Congrats '. $findId;
+});
+Route::get('test/{id1}/{id2}', 'TestsController@user');
+Route::get('id/{id?}', 'UserController@user');
+Route::get('form', 'FormController@user');
+Route::post('form', 'FormController@user');
